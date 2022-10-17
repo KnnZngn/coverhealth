@@ -1,0 +1,57 @@
+TC_05 valid first name
+#  1- Click on the "first name box"
+#  2-Type the "first name" which should has any chars
+#  3- Verify ??????
+#  4- Close the application
+#  5-
+#
+#
+#  TC_06 empty first name
+#  1- Click on the "first name box"
+#  2-Type the "first name" which should  NOT has any chars
+#  3- Enter a valid SSN ID into the SSN box
+#  4- Enter a valid last name into the Last Name box
+#  5- Enter a valid user name into the Username box
+#  6- Enter a valid email into the Email box
+#  7- Enter a valid password into the New password box
+#  8- Enter a same password into the New password box  for confirming
+#  9- Click on the "Register"
+#  10- Verify that "Your FirstName is required" is displaye
+#  11- Close the application
+#
+#  TC_07 valid last name
+#  1- Click on the "last name box"
+#  2-Type the "last name" which should has any chars
+#  3- Verify ??????
+#  4- Close the application
+#  5- Admin closes the application
+#
+#  TC_08 empty last name
+#  1- Click on the "last name box"
+#  2-Type the "last name" which should  NOT has any chars
+#  3- Enter a valid SSN ID into the SSN box
+#  4- Enter a valid first name into the Last Name box
+#  5- Enter a valid user name into the Username box
+#  6- Enter a valid email into the Email box
+#  7- Enter a valid password into the New password box
+#  8- Enter a same password into the New password box  for confirming
+#  9- Click on the "Register"
+#  10- Verify that "Your LastName  is required" is displayed
+#  11- Close the application
+
+
+
+@UIregistration
+  Scenario Outline: Register new users for GMI Bank
+    Given user is on the registration page
+    And user enters ssn number as "<SSN>"
+    Then user enters firstname and lastname as "<firstname>" and "<lastname>"
+    And user provides a username "<username>"
+    Then user provides email id as "<email>"
+    When user enters the password as "<firstpassword>"
+    And user confirms the new password "<secondpassword>"
+    Then user clicks on register button and sees the success message as "<message>"
+    Then user reads all registrant data
+    Examples:
+      |SSN|firstname|lastname|username|email|firstpassword|secondpassword|message|
+      |563-26-3726|Bahar|trk|sdet|bhrturk@gmail.com|Bhr@123?|Bhr@123?|Registration saved!|
